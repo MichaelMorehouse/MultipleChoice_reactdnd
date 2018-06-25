@@ -12,10 +12,14 @@ class AnswerBox extends Component {
     render() {
         const { connectDropTarget } = this.props;
         return connectDropTarget(
-            <form>
-                <input type='text' value={this.props.responseText} />
+            <div>
+                <div className='answerBox'>{this.props.responseText}</div>
                 <button type='button' onClick={this.handleClick}>Check answer</button>
-            </form>
+            </div>
+            // <form>
+            //     <input type='text' value={this.props.responseText} placeholder='Drop answer here' />
+            //     <button type='button' onClick={this.handleClick}>Check answer</button>
+            // </form>
         )
     }
 

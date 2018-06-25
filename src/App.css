@@ -1,0 +1,11 @@
+.answerChoice, .answerBox {
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+    margin: 5px;
+    width: 20%;
+}
+
+.answerBox {
+    height: 50px;
+}

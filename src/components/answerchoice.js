@@ -9,7 +9,7 @@ class AnswerChoice extends Component {
         const choiceStyleOpacity = this.props.responseText === this.props.choiceText ? 0.5 : 1;
 
         return connectDragSource(
-            <div style={{ opacity: choiceStyleOpacity }}>{this.props.choiceText}</div>
+            <div className='answerChoice' style={{ opacity: choiceStyleOpacity }}>{this.props.choiceText}</div>
         );
     }
 }
