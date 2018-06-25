@@ -22,7 +22,7 @@ const answerChoiceSource = {
 
     endDrag(props, monitor, component) {
         if(monitor.didDrop()) {
-            console.log("Successful drop");
+            // console.log("Successful drop");
         }
     }
 }

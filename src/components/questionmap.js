@@ -4,6 +4,7 @@ import Question from './question';
 export default class QuestionMap extends Component {
     render() {
 
+        // Dummy data
         const questions = [
             { 
                 questionText: "What is your favorite color?", 
@@ -17,6 +18,7 @@ export default class QuestionMap extends Component {
             }
         ]
 
+        // Create an array of Questions from an array of Question models 
         const questionMap = questions.map((question) =>{
             return (
                 <div>

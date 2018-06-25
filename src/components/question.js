@@ -44,7 +44,7 @@ export default class Question extends Component {
             this.setState(prevState => ({ 
                 incorrectAnswerCount: prevState.incorrectAnswerCount + 1
             }));
-            // Bug with async count update
+            // TODO Bug with async count update
             if (this.state.incorrectAnswerCount > 1) {
                 alert("Need a hint?");
             }

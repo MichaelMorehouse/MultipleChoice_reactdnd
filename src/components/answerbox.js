@@ -6,8 +6,6 @@ class AnswerBox extends Component {
     constructor(props) { 
         super(props);
 
-        // Binding necessary to handle point 'this' to component
-        // in event handler
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -16,7 +14,7 @@ class AnswerBox extends Component {
         return connectDropTarget(
             <form>
                 <input type='text' value={this.props.responseText} />
-                <button type="button" onClick={this.handleClick}>Check answer</button>
+                <button type='button' onClick={this.handleClick}>Check answer</button>
             </form>
         )
     }
