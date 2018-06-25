@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import AnswerChoiceMap from './answerchoicemap';
 import AnswerBox from './answerbox';
+import { PlaceholderText } from '../Constants';
 
 export default class Question extends Component {
     constructor(props) {
         super(props);
         // Question component handles all related state
         this.state = {
-            responseText: "",
+            responseText: PlaceholderText,
             responseSubmitted: false,
             answeredCorrectly: false,
             incorrectAnswerCount: 0,
@@ -49,7 +50,7 @@ export default class Question extends Component {
                 alert("Need a hint?");
             }
         }
-        this.setState({responseText: ""})
+        this.setState({responseText: PlaceholderText})
     }
     
     // Changes question state based on response drop in AnswerBox

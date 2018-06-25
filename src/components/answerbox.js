@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DropTarget } from 'react-dnd';
-import { ItemTypes } from '../Constants';
+import { ItemTypes, PlaceholderText } from '../Constants';
 
 class AnswerBox extends Component {
     constructor(props) { 
@@ -11,9 +11,11 @@ class AnswerBox extends Component {
 
     render() {
         const { connectDropTarget } = this.props;
+        const responseStyleOpacity = this.props.responseText === PlaceholderText ? .5 : 1;
+
         return connectDropTarget(
             <div>
-                <div className='answerBox'>{this.props.responseText}</div>
+                <div className='answerBox' style={{opacity: responseStyleOpacity }}>{this.props.responseText}</div>
                 <button type='button' onClick={this.handleClick}>Check answer</button>
             </div>
             // <form>
