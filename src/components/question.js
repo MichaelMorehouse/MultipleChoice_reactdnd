@@ -13,6 +13,7 @@ export default class Question extends Component {
             answeredCorrectly: false,
             incorrectAnswerCount: 0,
         }
+        this.handleClick = this.handleClick.bind(this);
         this.handleResponseDrop = this.handleResponseDrop.bind(this);
         this.getResult = this.getResult.bind(this);
     }
@@ -27,6 +28,7 @@ export default class Question extends Component {
                     handleResponseDrop={this.handleResponseDrop}
                 />
                 {this.renderAnswerChoices()}
+                <button type='button' onClick={this.handleClick}>Check it</button>
             </div>
         );
     }
@@ -64,6 +66,11 @@ export default class Question extends Component {
         this.setState({responseText: PlaceholderText})
     }
     
+    handleClick(e) {
+        e.preventDefault();
+        this.getResult();
+    }
+
     // Changes question state based on response drop in AnswerBox
     handleResponseDrop(responseText) {
         this.setState({responseText: responseText});
