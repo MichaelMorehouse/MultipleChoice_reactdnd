@@ -11,15 +11,18 @@ class AnswerBox extends Component {
 
     render() {
         const { connectDropTarget } = this.props;
-        const responseStyleOpacity = this.props.responseText === PlaceholderText ? .5 : 1;
+        const responseStyle = this.props.responseText === PlaceholderText 
+            ? { opacity: .5 } : { opacity: 1 };
 
         return connectDropTarget(
             <div>
-                <div className='answerBox' style={{opacity: responseStyleOpacity }}>{this.props.responseText}</div>
+                <div className='answerBox' style={ responseStyle }>
+                    {this.props.responseText}
+                </div>
                 <button type='button' onClick={this.handleClick}>Check answer</button>
             </div>
             // <form>
-            //     <input type='text' value={this.props.responseText} placeholder='Drop answer here' />
+            //     <input type='text' value={this.props.responseText} placeholder=PlaceholderText />
             //     <button type='button' onClick={this.handleClick}>Check answer</button>
             // </form>
         )
