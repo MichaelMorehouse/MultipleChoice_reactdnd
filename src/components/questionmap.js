@@ -7,11 +7,13 @@ export default class QuestionMap extends Component {
         // Dummy data
         const questions = [
             { 
+                _id: 1,
                 questionText: "What is your favorite color?", 
                 answerChoices: ['red','green','blue','yellow','purple'],
                 correctChoice: 'green'
             },
             {
+                _id: 2,
                 questionText: "What did you have for breakfast?",
                 answerChoices: ['eggs','granola','coffee','nothing','oatmeal'],
                 correctChoice: 'eggs'
@@ -21,14 +23,12 @@ export default class QuestionMap extends Component {
         // Create an array of Questions from an array of Question models 
         const questionMap = questions.map((question) =>{
             return (
-                <div>
-                    <Question 
-                        key={question.questionText}
-                        questionText={question.questionText}
-                        answerChoices={question.answerChoices}
-                        correctChoice={question.correctChoice}
-                    />
-                </div>
+                <Question 
+                    key={question._id}
+                    questionText={question.questionText}
+                    answerChoices={question.answerChoices}
+                    correctChoice={question.correctChoice}
+                />
             );
         });
 

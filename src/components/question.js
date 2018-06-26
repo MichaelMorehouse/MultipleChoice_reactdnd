@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AnswerChoiceMap from './answerchoicemap';
 import AnswerBox from './answerbox';
+import AnswerChoice from './answerchoice';
 import { PlaceholderText } from '../Constants';
 
 export default class Question extends Component {
@@ -26,12 +26,23 @@ export default class Question extends Component {
                     getResult={this.getResult}
                     handleResponseDrop={this.handleResponseDrop}
                 />
-                <AnswerChoiceMap 
-                    answerChoices={this.props.answerChoices}
-                    responseText={this.state.responseText}
-                />
+                {this.renderAnswerChoices()}
             </div>
         );
+    }
+
+    renderAnswerChoices() {
+        const answerChoiceMap = this.props.answerChoices.map(choiceText =>{
+            return (
+                <AnswerChoice 
+                    key={choiceText} 
+                    choiceText={choiceText}
+                    responseText={this.state.responseText}
+                />
+            );
+        });
+
+        return answerChoiceMap;
     }
 
     // Checks for correct response in AnswerBox after AnswerBox 
@@ -46,7 +57,7 @@ export default class Question extends Component {
                 incorrectAnswerCount: prevState.incorrectAnswerCount + 1
             }));
             // TODO Bug with async count update
-            if (this.state.incorrectAnswerCount > 0) {
+            if (this.state.incorrectAnswerCount > 1) {
                 alert("Need a hint?");
             }
         }
