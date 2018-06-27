@@ -25,6 +25,7 @@ export default class QuestionMap extends Component {
             return (
                 <Question 
                     key={question._id}
+                    questionId={question._id}
                     questionText={question.questionText}
                     answerChoices={question.answerChoices}
                     correctChoice={question.correctChoice}

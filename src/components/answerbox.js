@@ -17,6 +17,10 @@ class AnswerBox extends Component {
 }
 
 const answerBoxTarget = {
+    canDrop(props, monitor) {
+        const item = monitor.getItem();
+        return (props.questionId === item.questionId);
+    },
     drop(props, monitor, component) {
         const item = monitor.getItem();
         // Lift responseText state to Question parent

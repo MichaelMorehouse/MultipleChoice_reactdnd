@@ -17,8 +17,7 @@ class AnswerChoice extends Component {
 
 const answerChoiceSource = {
     beginDrag(props) {
-        // Dragging item only receives the choiceText property
-        return { responseText: props.choiceText };
+        return { responseText: props.choiceText, questionId: props.questionId };
     },
 
     endDrag(props, monitor, component) {

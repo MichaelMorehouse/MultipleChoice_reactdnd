@@ -23,6 +23,7 @@ export default class Question extends Component {
             <div>
                 <p>{this.props.questionText}</p>
                 <AnswerBox
+                    questionId={this.props.questionId}
                     responseText={this.state.responseText}
                     getResult={this.getResult}
                     handleResponseDrop={this.handleResponseDrop}
@@ -38,6 +39,7 @@ export default class Question extends Component {
             return (
                 <AnswerChoice 
                     key={choiceText} 
+                    questionId={this.props.questionId}
                     choiceText={choiceText}
                     responseText={this.state.responseText}
                 />
