@@ -5,11 +5,11 @@ import { ItemTypes, PlaceholderText } from '../Constants';
 class AnswerBox extends Component {
     render() {
         const { connectDropTarget } = this.props;
-        const responseStyle = this.props.responseText === PlaceholderText 
-            ? { opacity: .5 } : { opacity: 1 };
+        const responseOpacity = this.props.responseText === PlaceholderText 
+            ? 0.5 : 1;
 
         return connectDropTarget(
-            <div className='answerBox' style={ responseStyle }>
+            <div className='answerBox' style={{ opacity: responseOpacity }}>
                 {this.props.responseText}
             </div>
         )
