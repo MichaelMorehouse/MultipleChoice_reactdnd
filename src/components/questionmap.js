@@ -21,7 +21,7 @@ export default class QuestionMap extends Component {
         ]
 
         // Create an array of Questions from an array of Question models 
-        const questionMap = questions.map((question) =>{
+        const questionMap = questions.map((question) => {
             return (
                 <Question 
                     key={question._id}
